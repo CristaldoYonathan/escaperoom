@@ -8,7 +8,7 @@ export default function Cierre({ onComplete }: { playerName: string, onComplete:
         <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">Introducción</h2>
             <video
-                src="/placeholder.svg?height=360&width=640"
+                src="/loros.mp4?height=360&width=640"
                 controls
                 onEnded={() => setVideoWatched(true)}
                 className="w-full mb-4"

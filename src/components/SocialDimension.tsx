@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
@@ -70,7 +70,7 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
         Luego de pasar por algunos obstáculos y desafíos en la densa selva amazónica, finalmente llegas a un claro donde el sol ilumina una antigua escalera de piedra que parece llevar a la cima de la montaña. Antes de poder subir, un guacamayo de plumas coloridas aterriza frente a ti. Sus ojos brillan con inteligencia, y se dirige a ti en un tono amistoso:
       </p>
       <p className="mb-4 italic">
-        "¡Hola, viajero perdido! Soy el guardián de esta escalera. Para alcanzar la cima, debes responder a mis cinco acertijos. Cada uno de ellos te hará pensar en las conexiones y relaciones que existen en la comunidad escolar, al igual que en la selva. Solo si logras resolverlos, te permitiré seguir tu camino. ¡Prepárate!"
+        &#34;¡Hola, viajero perdido! Soy el guardián de esta escalera. Para alcanzar la cima, debes responder a mis cinco acertijos. Cada uno de ellos te hará pensar en las conexiones y relaciones que existen en la comunidad escolar, al igual que en la selva. Solo si logras resolverlos, te permitiré seguir tu camino. ¡Prepárate!&#34;
       </p>
       <form onSubmit={handleSubmit}>
         <p className="mb-4">{tasks[currentTask].question}</p>

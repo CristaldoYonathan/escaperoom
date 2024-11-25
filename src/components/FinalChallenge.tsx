@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
@@ -34,7 +34,7 @@ export default function FinalChallenge({ codes }: { codes: string[] }) {
       <div className="flex items-center mb-6">
         <div className="w-1/2 pr-4">
           <video
-            src="/placeholder.svg?height=360&width=640"
+            src="/loros.mp4?height=360&width=640"
             controls
             className="w-full rounded-lg shadow-md"
           >
@@ -54,7 +54,7 @@ export default function FinalChallenge({ codes }: { codes: string[] }) {
         Al final de la montaña te encuentras con los rescatistas y una cacatúa parlante.
       </p>
       <p className="mb-4 italic text-green-700">
-        "¡Hola, viajero! Has llegado muy lejos. Para validar tu identidad, debes darnos el código que solo un verdadero conocedor de las dimensiones educativas sabe. Ordena las letras con los 4 dígitos que has descubierto y logra ser rescatado."
+        &#34;¡Hola, viajero! Has llegado muy lejos. Para validar tu identidad, debes darnos el código que solo un verdadero conocedor de las dimensiones educativas sabe. Ordena las letras con los 4 dígitos que has descubierto y logra ser rescaled.&#34;
       </p>
       <p className="mb-4 font-bold text-green-800">
         Códigos recolectados: {codes.join(', ')}
