@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
 import { playSound } from '@/utils/sound'
+import Image from "next/image";
 
 const tasks = [
   {
@@ -69,6 +70,13 @@ export default function OrganizationalDimension({ onComplete }: { onComplete: (c
       <form onSubmit={handleSubmit}>
         <p className="mb-4 text-black">{tasks[currentTask].question}</p>
         {showHint && <p className="mb-4 text-yellow-600">Pista: {tasks[currentTask].hint}</p>}
+        <Image
+            src="/images/esim.png"
+            alt="esim"
+            width={200}
+            height={200}
+            className={"w-full rounded-lg shadow-md my-5"}
+        />
         <Input
           type="text"
           value={answer}
@@ -85,7 +93,7 @@ export default function OrganizationalDimension({ onComplete }: { onComplete: (c
       </form>
       {currentTask === tasks.length - 1 && (
         <div className="mt-4 p-4 bg-yellow-100 rounded-lg">
-          <p className="text-yellow-800 font-bold">Código obtenido: M - 4</p>
+          <p className="text-yellow-800 font-bold">Felicidades por: M - 4</p>
         </div>
       )}
     </div>

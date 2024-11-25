@@ -31,7 +31,7 @@ export default function EscapeRoom() {
             audio.pause();
             audio.currentTime = 0;
         };
-    }, [volume]);
+    }, []);
 
     // Actualizar volumen cuando cambie el estado
     useEffect(() => {

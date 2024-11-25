@@ -50,7 +50,7 @@ export default function FinalChallenge({ codes }: { codes: string[] }) {
           </svg>
         </div>
       </div>
-      <p className="mb-4">
+      <p className="mb-4 text-black">
         Al final de la montaña te encuentras con los rescatistas y una cacatúa parlante.
       </p>
       <p className="mb-4 italic text-green-700">
@@ -66,7 +66,7 @@ export default function FinalChallenge({ codes }: { codes: string[] }) {
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             placeholder="Ingresa el código final"
-            className="bg-white"
+            className="bg-white text-black"
           />
           <Button type="submit" className="w-full">Enviar Código Final</Button>
         </form>

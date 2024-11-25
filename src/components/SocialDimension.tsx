@@ -73,14 +73,14 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
         &#34;¡Hola, viajero perdido! Soy el guardián de esta escalera. Para alcanzar la cima, debes responder a mis cinco acertijos. Cada uno de ellos te hará pensar en las conexiones y relaciones que existen en la comunidad escolar, al igual que en la selva. Solo si logras resolverlos, te permitiré seguir tu camino. ¡Prepárate!&#34;
       </p>
       <form onSubmit={handleSubmit}>
-        <p className="mb-4">{tasks[currentTask].question}</p>
+        <p className="mb-4 text-black">{tasks[currentTask].question}</p>
         {showHint && <p className="mb-4 text-yellow-300">Pista: {tasks[currentTask].hint}</p>}
         <Input
           type="text"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           placeholder="Tu respuesta"
-          className="mb-4"
+          className="mb-4 text-black"
         />
         <div className="flex gap-4">
           <Button type="submit">Enviar</Button>
