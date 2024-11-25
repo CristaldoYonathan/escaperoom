@@ -64,12 +64,12 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Dimensión Socio - Comunitaria</h2>
-      <p className="mb-4">
+    <div className="max-w-2xl mx-auto bg-green-100 p-6 rounded-lg shadow-lg">
+      <h2 className="text-3xl font-bold mb-6 text-green-800">Dimensión Socio - Comunitaria</h2>
+      <p className="mb-4 text-black">
         Luego de pasar por algunos obstáculos y desafíos en la densa selva amazónica, finalmente llegas a un claro donde el sol ilumina una antigua escalera de piedra que parece llevar a la cima de la montaña. Antes de poder subir, un guacamayo de plumas coloridas aterriza frente a ti. Sus ojos brillan con inteligencia, y se dirige a ti en un tono amistoso:
       </p>
-      <p className="mb-4 italic">
+      <p className="mb-4 italic text-black">
         &#34;¡Hola, viajero perdido! Soy el guardián de esta escalera. Para alcanzar la cima, debes responder a mis cinco acertijos. Cada uno de ellos te hará pensar en las conexiones y relaciones que existen en la comunidad escolar, al igual que en la selva. Solo si logras resolverlos, te permitiré seguir tu camino. ¡Prepárate!&#34;
       </p>
       <form onSubmit={handleSubmit}>

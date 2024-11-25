@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import NameInput from '../components/NameInput'
 import Introduction from '../components/Introduction'
 import OrganizationalDimension from '../components/OrganizationalDimension'
@@ -9,12 +9,50 @@ import AdministrativeDimension from '../components/AdministrativeDimension'
 import Cierre from "@/components/Cierre"
 import SocialDimension from '../components/SocialDimension'
 import FinalChallenge from '../components/FinalChallenge'
+import { Volume, VolumeX } from 'lucide-react'
 
 export default function EscapeRoom() {
     const [playerName, setPlayerName] = useState('')
     const [gameStage, setGameStage] = useState('nameInput')
     const [collectedCodes, setCollectedCodes] = useState<string[]>([])
+    const [isPlaying, setIsPlaying] = useState(false) // Comienza pausado
+    const [volume, setVolume] = useState(0.5) // Estado para el volumen
+    const audioRef = useRef<HTMLAudioElement | null>(null) // Referencia al audio
 
+    // Configuración del sonido de fondo
+    useEffect(() => {
+        const audio = new Audio('/sonidos/sonidoFondo.mp3');
+        audio.loop = true; // Repetir en bucle
+        audio.volume = volume; // Volumen inicial
+        audioRef.current = audio;
+
+        return () => {
+            // Limpiar el audio al desmontar el componente
+            audio.pause();
+            audio.currentTime = 0;
+        };
+    }, [volume]);
+
+    // Actualizar volumen cuando cambie el estado
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = volume;
+        }
+    }, [volume]);
+
+    // Pausar o reanudar el sonido
+    const togglePlayPause = () => {
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play().catch((error) => {
+                    console.error('Error al intentar reproducir:', error);
+                });
+            }
+            setIsPlaying(!isPlaying); // Alternar el estado de reproducción
+        }
+    };
 
     const advanceStage = (nextStage: string) => {
         setGameStage(nextStage)
@@ -64,6 +102,28 @@ export default function EscapeRoom() {
                         advanceStage('final')
                     }} />}
                     {gameStage === 'final' && <FinalChallenge codes={collectedCodes} />}
+                </div>
+                {/* Control de sonido */}
+                <div className="absolute bottom-4 right-4 p-4 bg-gray-800/70 rounded-lg shadow-lg flex items-center gap-2">
+                    {/* Botón de reproducción/pausa */}
+                    <button
+                        onClick={togglePlayPause}
+                        className="p-2 text-yellow-500 hover:text-yellow-300 transition"
+                        aria-label="Reproducir o Pausar"
+                    >
+                        {isPlaying ? <Volume /> : <VolumeX />}
+                    </button>
+                    {/* Control de volumen */}
+                    <input
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value={volume}
+                        onChange={(e) => setVolume(parseFloat(e.target.value))}
+                        className="w-24 h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-yellow-500"
+                        aria-label="Control de volumen"
+                    />
                 </div>
             </div>
         </div>
