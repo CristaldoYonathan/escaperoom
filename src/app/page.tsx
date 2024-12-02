@@ -14,7 +14,7 @@ import { Volume, VolumeX } from 'lucide-react'
 export default function EscapeRoom() {
     const [playerName, setPlayerName] = useState('')
     const [gameStage, setGameStage] = useState('nameInput')
-    const [collectedCodes, setCollectedCodes] = useState<string[]>([])
+    const [/*collectedCodes*/, setCollectedCodes] = useState<string[]>([])
     const [isPlaying, setIsPlaying] = useState(false) // Comienza pausado
     const [volume, setVolume] = useState(0.5) // Estado para el volumen
     const audioRef = useRef<HTMLAudioElement | null>(null) // Referencia al audio
@@ -31,7 +31,7 @@ export default function EscapeRoom() {
             audio.pause();
             audio.currentTime = 0;
         };
-    }, []);
+    }, [volume]);
 
     // Actualizar volumen cuando cambie el estado
     useEffect(() => {
@@ -101,7 +101,7 @@ export default function EscapeRoom() {
                         addCode(code);
                         advanceStage('final')
                     }} />}
-                    {gameStage === 'final' && <FinalChallenge codes={collectedCodes} />}
+                    {gameStage === 'final' && <FinalChallenge />}
                 </div>
                 {/* Control de sonido */}
                 <div className="absolute bottom-4 right-4 p-4 bg-gray-800/70 rounded-lg shadow-lg flex items-center gap-2">

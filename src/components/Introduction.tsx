@@ -12,8 +12,8 @@ export default function Introduction({ playerName, onComplete }: { playerName: s
     }, [])
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-gradient-to-b from-green-900 to-green-800 rounded-lg shadow-2xl border border-green-600">
-            <h2 className="text-3xl font-bold mb-6 text-yellow-300 text-center">Es hora de escapar de la Selva, {playerName}</h2>
+        <div className="max-w-4xl mx-auto p-6 bg-white/70 backdrop-blur-lg border border-white/40 rounded-2xl shadow-2xl">
+            <h2 className="text-3xl font-bold mb-6 text-green-800 text-center">Es hora de escapar de la Selva, {playerName}</h2>
             <div className="relative mb-6">
                 <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none rounded-md" />
                 <iframe
@@ -27,7 +27,7 @@ export default function Introduction({ playerName, onComplete }: { playerName: s
                     className="w-full rounded-md shadow-md"
                 ></iframe>
             </div>
-            <p className="text-green-100 mb-6 text-center">
+            <p className="text-gray-600 mb-6 text-center">
                 Te adentras en la densa selva amazónica, donde cada decisión puede ser crucial para tu supervivencia.
                 Prepárate para enfrentar los desafíos que la naturaleza y este entorno único te presentarán.
             </p>
