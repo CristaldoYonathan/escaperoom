@@ -4,38 +4,42 @@ import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
 import { playSound } from '@/utils/sound'
 import Image from "next/image"
-import PlaceholderImage from "../../public/images/whatsApp.webp" // Replace with your actual placeholder image
+import Rifas from "../../public/images/Rifas.webp"
+import Notebook from "../../public/images/notebook.webp"
+import FalsoA from "../../public/images/FalsoA.webp"
+import VerdaderoA from "../../public/images/VerdaderoP.webp"
+import Publica from "../../public/images/publica.webp"
 
 const tasks = [
     {
         question: "¿Cuál es el método más utilizado para recaudar fondos dentro de la comunidad de la ESIM durante 2024?",
         hint: "Método de recaudación dónde el ganador sale sorteado.",
         answer: "Rifas",
-        image: PlaceholderImage
+        image: Rifas
     },
     {
         question: "¿Qué recurso tecnológico se gestiona de manera compartida en la ESIM para garantizar que todos los estudiantes puedan usarlo?",
         hint: "Es un dispositivo tecnológico usado para estudiar y hacer proyectos.",
         answer: "Notebook",
-        image: PlaceholderImage
+        image: Notebook
     },
     {
         question: "En la ESIM, los recursos tecnológicos son exclusivos y no se permiten préstamos entre los estudiantes. ¿Esto es verdadero o falso?",
         hint: "Piensa en la colaboración y el uso compartido de recursos",
         answer: "Falso",
-        image: PlaceholderImage
+        image: FalsoA
     },
     {
         question: "La cooperadora de la ESIM organiza eventos y recolecta materiales para apoyar las actividades escolares. ¿Esto es verdadero o falso?",
         hint: "Considera el papel de la comunidad escolar en el apoyo educativo",
         answer: "Verdadero",
-        image: PlaceholderImage
+        image: VerdaderoA
     },
     {
         question: "¿Cuál es la gestión de la ESIM que permite que todos los estudiantes puedan acceder a su educación sin pagar matrícula?",
         hint: "Es un tipo de gestión educativa que garantiza el acceso gratuito.",
         answer: "Pública",
-        image: PlaceholderImage
+        image: Publica
     }
 ]
 

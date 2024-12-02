@@ -4,38 +4,43 @@ import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
 import { playSound } from '@/utils/sound'
 import Image from "next/image"
-import PlaceholderImage from "../../public/images/whatsApp.webp" // Replace with your actual placeholder image
+import Interdisciplinaria from "../../public/images/interdisciplinaria.webp"
+import Transposicion from "../../public/images/transposición.webp"
+import Planificacion from "../../public/images/Planificación.webp"
+import FalsoP from "../../public/images/falsoP.webp"
+import VerdaderoP from "../../public/images/VerdaderoP.webp"
+
 
 const tasks = [
   {
     question: "¿Qué tipo de enseñanza utiliza la ESIM para combinar diferentes materias en un solo proyecto educativo?",
     hint: "Se enseña más de una materia al mismo tiempo.",
     answer: "interdisciplinaria",
-    image: PlaceholderImage
+    image: Interdisciplinaria
   },
   {
     question: "¿Cómo adaptan los docentes el conocimiento para hacerlo comprensible para los estudiantes?",
     hint: "Transforman conceptos complejos (conocimiento científico) para que sean fáciles de entender.",
     answer: "transposición",
-    image: PlaceholderImage
+    image: Transposicion
   },
   {
     question: "¿Qué estrategia sigue la ESIM al planificar los contenidos y temas para el año escolar?",
     hint: "Es una guía detallada que los docentes crean.",
-    answer: "Planificación",
-    image: PlaceholderImage
+    answer: "planificación",
+    image: Planificacion
   },
   {
     question: "En la ESIM, cada docente planifica sus clases de forma aislada, sin colaborar con otros docentes de distintas áreas. ¿Esto es verdadero o falso?",
     hint: "Piensa en la colaboración entre docentes",
     answer: "Falso",
-    image: PlaceholderImage
+    image: FalsoP
   },
   {
     question: "En la ESIM, los estudiantes participan activamente en proyectos que integran varias materias, aplicando sus conocimientos al resolver problemas reales. ¿Esto es verdadero o falso?",
     hint: "Considera el enfoque de aprendizaje práctico",
     answer: "Verdadero",
-    image: PlaceholderImage
+    image: VerdaderoP
   }
 ]
 

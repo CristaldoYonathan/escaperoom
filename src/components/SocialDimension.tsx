@@ -3,8 +3,12 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
 import { playSound } from '@/utils/sound'
-// import Image from "next/image"
-import Colaboracion from "../../public/images/circular.webp"
+import Image from "next/image";
+import Colaboracion from "../../public/images/colaboracion.webp"
+import Coordinadores from "../../public/images/coordinadores.webp"
+import Maraton from "../../public/images/maraton.webp"
+import Participacion from "../../public/images/participacion.webp"
+import Extension from "../../public/images/extension.webp"
 
 const tasks = [
   {
@@ -17,25 +21,25 @@ const tasks = [
     question: "¿Quiénes son estos importantes enlaces que coordinan y guían, conectando familias y estudiantes en la escuela?",
     hint: "Son personas que conectan familias y estudiantes, también son llamados preceptores.",
     answer: "Coordinadores",
-    image: Colaboracion
+    image: Coordinadores
   },
   {
     question: "¿Qué actividad permite a la comunidad compartir y contribuir con los más necesitados en tu escuela?",
     hint: "Evento solidario donde se corre una…",
     answer: "Maratón",
-    image: Colaboracion
+    image: Maraton
   },
   {
     question: "¿Qué proceso es este donde se escuchan muchas voces para decidir, tanto estudiantes como familias participan?",
     hint: "Una manera de involucrarse y dar tu opinión.",
     answer: "Participación",
-    image: Colaboracion
+    image: Participacion
   },
   {
     question: "¿Cómo se llaman estos tipos de proyectos que fluyen como un vínculo entre la institución y el entorno, haciendo proyectos juntos para crecer?",
     hint: "Estos proyectos son de …",
     answer: "Extensión",
-    image: Colaboracion
+    image: Extension
   }
 ]
 
@@ -220,10 +224,10 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
             </h2>
             <div className="space-y-6">
               <p className="text-2xl text-center text-green-800 font-bold">
-                ¡Felicidades! Has completado el desafío de la dimensión Socio - Comunitaria.
+                ¡Felicidades! Has completado la última dimensión.
               </p>
               <p className="text-xl text-center text-gray-700">
-                Te daré un código para que al final puedas ser rescatado.
+                Este es el código faltante para completar el desafío final.
                 Mantén presionado el cuadro durante 3 segundos para revelar tu código.
               </p>
               <BreakableScreen
@@ -274,6 +278,16 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
                   Mostrar Pista
                 </Button>
               </div>
+            </div>
+
+            <div className="order-1 md:order-2 flex justify-center items-center">
+              <Image
+                  src={tasks[currentTask].image}
+                  alt="esim"
+                  width={500}
+                  height={500}
+                  className="rounded-2xl shadow-xl object-cover w-full max-h-[400px] md:max-h-[500px]"
+              />
             </div>
 
             <div className="order-1 md:order-2 flex justify-center items-center">
