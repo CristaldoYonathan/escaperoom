@@ -181,7 +181,7 @@ export default function OrganizationalDimension({ onComplete }: { onComplete: (c
                 {!allTasksCompleted ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
                         <div className="order-2 md:order-1 space-y-4 md:space-y-6">
-                            <p className="text-xl md:text-2xl text-black text-center line-clamp-3">
+                            <p className="text-xl md:text-2xl text-black text-center">
                                 {tasks[currentTask].question}
                             </p>
 

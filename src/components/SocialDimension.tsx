@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useToast } from "@/hooks/use-toast"
@@ -141,6 +141,13 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
   const [answer, setAnswer] = useState('')
   const [showHint, setShowHint] = useState(false)
   const { toast } = useToast()
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.src = '/sonidos/cacatua.mp3';
+    }
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -181,16 +188,23 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
               <p className="text-xl md:text-2xl text-black italic">
                 Antes de poder subir, un guacamayo de plumas coloridas aterriza frente a ti. Sus ojos brillan con inteligencia, y se dirige a ti en un tono amistoso:
               </p>
-              <p className="text-xl md:text-2xl text-green-700 font-semibold italic">
-                &#34;¡Hola, viajero perdido! Soy el guardián de esta escalera. Para alcanzar la cima, debes responder a mis cinco acertijos. Cada uno de ellos te hará pensar en las conexiones y relaciones que existen en la comunidad escolar, al igual que en la selva. Solo si logras resolverlos, te permitiré seguir tu camino. ¡Prepárate! &#34;
-              </p>
-              <Button
-                  onClick={() => setStage('quiz')}
-                  size="lg"
-                  className="mx-auto block"
-              >
-                Comenzar Desafío
-              </Button>
+              <div className="flex flex-col items-center space-y-4">
+                <audio
+                    ref={audioRef}
+                    controls
+                    className="w-full max-w-md"
+                    aria-label="Reproductor de audio"
+                >
+                  Tu navegador no soporta el elemento de audio.
+                </audio>
+                <Button
+                    onClick={() => setStage('quiz')}
+                    size="lg"
+                    className="mx-auto block"
+                >
+                  Comenzar Desafío
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -231,7 +245,7 @@ export default function SocialDimension({ onComplete }: { onComplete: (code: str
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
             <div className="order-2 md:order-1 space-y-4 md:space-y-6">
-              <p className="text-xl md:text-2xl text-black text-center line-clamp-3">
+              <p className="text-xl md:text-2xl text-black text-center">
                 {tasks[currentTask].question}
               </p>
 
